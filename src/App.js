@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Hello App
+      <NameTag
+        listOfHobbies={["running", "jumping"]}
+        name="Ebere"
+        asdf={30}
+        desc={{ age: 10, pet: "cat" }}
+        getFullName={() => "Ebere I"}
+      />
+      <NameTagWithChildren>
+        <span>hello I am a component with children</span>
+      </NameTagWithChildren>
+    </div>
+  );
+}
+
+function NameTagWithChildren(props) {
+  return (
+    <div>
+      <div>Hello NameTagWithChildren</div>
+      <div>{props.children}</div>
+    </div>
+  );
+}
+
+function NameTag(props) {
+  console.log(props);
+  return (
+    <div className="App">
+      Name {props.name} {props.asdf}
+      <br />
+      {props.desc.age} - {props.desc.pet}
+      <br />
+      {props.listOfHobbies} - {props.getFullName()}
     </div>
   );
 }
