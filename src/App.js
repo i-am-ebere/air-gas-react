@@ -3,7 +3,6 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      Hello App
       <NameTag
         listOfHobbies={["running", "jumping"]}
         name="Ebere"
@@ -11,6 +10,8 @@ function App() {
         desc={{ age: 10, pet: "cat" }}
         getFullName={() => "Ebere I"}
       />
+      <br />
+      <br />
       <NameTagWithChildren>
         <span>hello I am a component with children</span>
       </NameTagWithChildren>
@@ -28,7 +29,6 @@ function NameTagWithChildren(props) {
 }
 
 function NameTag(props) {
-  console.log(props);
   return (
     <div className="App">
       Name {props.name} {props.asdf}
