@@ -27,6 +27,7 @@ export function NameTagWithChildren(props) {
 }
 
 export function NameTag(props) {
+  console.log("props: ", props);
   return (
     <div className="App">
       Name {props.name} {props.asdf}
@@ -34,6 +35,9 @@ export function NameTag(props) {
       {props.desc.age} - {props.desc.pet}
       <br />
       {props.listOfHobbies} - {props.getFullName()}
+      <button onClick={() => props.changeBirthday(props.asdf + 1)}>
+        Change Birthday{" "}
+      </button>
     </div>
   );
 }
